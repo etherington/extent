@@ -16,6 +16,9 @@ namespace Extent.ExtentCalculation
 
         public ChangePointToNumberOfExtentsMap(ChangePointToChangeMagnitudeMap changePoints)
         {
+            if (changePoints == null)
+                throw new ArgumentNullException(nameof(changePoints));
+
             int numberOfExtents = 0;
             int i = 0; 
             MappingPoints = new SortedList<int, uint>(changePoints.ChangePoints.Count);
@@ -48,6 +51,5 @@ namespace Extent.ExtentCalculation
 
             return MappingPoints[Utilities.GetClosestIntLessThanOrEqualToValue(MappingPoints.Keys, point)];
         }
-
     }
 }

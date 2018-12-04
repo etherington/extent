@@ -24,7 +24,7 @@ namespace Extent
                    while ((extentLine = reader.ReadLine()) != null)
                    {
                       var list = extentLine.Trim().Split(' ').Select(Int32.Parse).ToList();
-                       extentCalculator.AddExtent(new Extent.ExtentCalculation.Extent(list[0], list[1]));
+                       extentCalculator.AddExtent(new ExtentCalculation.Extent(list[0], list[1]));
                    }
                }
            }

@@ -6,7 +6,7 @@ namespace Extent.ExtentCalculation
     public static class Utilities
     {
         /// <summary>
-        /// A binary search on a list of integers to find the element in the list that is closest to and less than or equal to the given value.
+        /// Performs a binary search on a list of integers to find the element in the list that is closest to and less than or equal to the given value.
         /// </summary>
         /// <param name="integersList">The list of integers to search</param>
         /// <param name="value">The value to match</param>

@@ -1,28 +1,28 @@
-﻿namespace Extent.ExtentCalculation
+﻿using System;
+
+namespace Extent.ExtentCalculation
 {
     /// <summary>
     /// This class allows the point to number of extents to be calculated.
     /// Usage:
     /// 1. Call AddExtent for all extents.
     /// 2. Call Initialize to calculate the mapping internally.
-    /// 3. Call GetNumberOfExtentsForPoint for all points. 
+    /// 3. Call GetNumberOfExtentsForPoint for any point. 
     /// </summary>
     public class ExtentCalculator
     {
         private readonly ChangePointToChangeMagnitudeMap _changePointToChangeMagnitudeMap = new ChangePointToChangeMagnitudeMap();
         private ChangePointToNumberOfExtentsMap _changePointToNumberOfExtentsMap;
         private bool _isExtentsMapInitialized = false;
-
-        public ExtentCalculator()
-        {
-        }
-
+        
         /// <summary>
         /// Add the extent to the list of changePoints.
         /// </summary>
         /// <param name="extent">The extent</param>
         public void AddExtent(Extent extent)
         {
+            if (extent == null)
+                throw new ArgumentNullException(nameof(extent));
             _changePointToChangeMagnitudeMap.AddExtent(extent);
         }
 
